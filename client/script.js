@@ -19,7 +19,7 @@ function createCard(person) {
 
     const avatar = document.createElement('div');
     avatar.classList.add('avatar');
-    avatar.innerHTML = `<img src="${person.photo}" alt="${person.name}">`;
+    avatar.innerHTML = `<img src="/uploads/${person.photo}" alt="${person.name}">`;
 
     const details = document.createElement('div');
     details.classList.add('details');
@@ -88,7 +88,7 @@ async function editPerson(id) {
 
                 // Проверяем наличие новой фотографии и обновляем путь
                 if (updatedPerson.photo) {
-                    modal.querySelector('img').src = updatedPerson.photo;
+                    modal.querySelector('img').src = `/uploads/${updatedPerson.photo}`;
                     modal.querySelector('img').alt = updatedPerson.name;
                 }
 
