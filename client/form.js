@@ -1,7 +1,14 @@
-// form.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('add-person-form');
+    const formContainer = document.getElementById('form-container');
+    const showFormBtn = document.createElement('button');
+    showFormBtn.textContent = 'Add Person';
+    showFormBtn.id = 'show-form-btn';
+    document.body.insertBefore(showFormBtn, formContainer);
+
+    showFormBtn.addEventListener('click', () => {
+        formContainer.classList.toggle('hidden');
+    });
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
